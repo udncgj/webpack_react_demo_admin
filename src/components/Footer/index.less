@@ -1,0 +1,23 @@
+@import "../../less-data.less";
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: @footerHeight;
+    line-height: @footerHeight;
+    box-shadow: 0 -2px 5px #ccc;
+    background: #fff;
+    .footer-a{
+        display: inline-block;
+        text-align: center;
+        box-sizing: border-box;
+        &.active{
+            color: #fff;
+            background: @baseColor;
+        }
+    }
+}
+body{
+    padding-bottom: @footerHeight;
+}

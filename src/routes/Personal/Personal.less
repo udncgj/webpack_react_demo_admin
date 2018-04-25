@@ -1,0 +1,67 @@
+@import "../../less-data.less";
+
+.pessonal{
+    .p-mes{
+        padding: 0 0.1rem;
+        height: 1.2rem;
+        background: @baseColor;
+        color: #fff;
+        .box-center;
+        .p-mes-head{
+            width: 25%;
+            text-align: right;
+            padding-right: 0.2rem;
+            img{
+                height: 0.66rem;
+                width: 0.66rem;
+                border-radius: 0.33rem;
+                border: 1px solid #fff;
+                background-color: #fff;
+            }
+        }
+        .p-mes-login{
+            width: 75%;
+            text-align: center;
+            // font-size: 0.16rem;
+            span{
+                border: 1px #fff solid;
+                border-radius: 0.03rem;
+                display: inline-block;
+                width: 70%;
+                height: 0.4rem;
+                line-height: 0.4rem;
+            }
+        }
+        .p-mes-lists{
+            width: 75%;
+            .p-mes-list1{
+                font-size: 0.18rem;
+            }
+            .p-mes-list2{
+                font-size: 0.10rem;
+                border-bottom: 1px #ccc solid;
+                padding: 0.05rem 0;
+                margin-bottom: 0.05rem;
+                span:last-child{
+                    float: right;
+                }
+            }
+            .p-mes-list3{
+                span:first-child{
+                    padding-right: 0.2rem;
+                }
+            }
+        }
+    }
+    .p-loginOut{
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 0.2rem;
+        background: #fff;
+        height: 0.34rem;
+        line-height: 0.34rem;
+        text-align: center;
+        border: 1px #ccc solid;
+        .cur;
+    }
+}

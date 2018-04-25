@@ -1,0 +1,58 @@
+@import "../../less-data.less";
+.user{
+    .user-title{
+        font-size: 0.3rem;
+        text-align: center;
+        margin: 0.8rem 0 0.3rem;
+        color: @baseColor;
+    }
+    form{
+        input{
+            width: 80%;
+            font-size: 0.14rem;
+            border: none;
+            margin-left: 10%;
+        }
+        .user-input{
+            display: block;
+            width: 100%;
+            // padding-left: 10%;
+            margin-bottom: 0.2rem;
+            input{
+                height: 0.34rem;
+                line-height: 0.34rem;
+                padding-left: 0.1rem;
+                border-bottom: 2px solid #ccc;
+                &:focus{
+                    border-bottom: 2px solid @baseColor;
+                }
+            }
+        }
+        .user-submit{
+            height: 0.44rem;
+            border-radius: 0.05rem;
+            background: @baseColor;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    .user-other{
+        // text-align: center;
+        justify-content: center;
+        margin-top: 0.1rem;
+        color: #999;
+        line-height: 0.44rem;
+        .user-other-type{
+            cursor: pointer;
+            &:hover{
+                color: @baseColor;
+            }
+        }
+        .user-other-wire{
+            margin: 0 0.1rem;
+            border-left: 1px solid #999;
+            // display: inline-block;
+            height: 0.12rem;
+        }
+    }
+}

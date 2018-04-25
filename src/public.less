@@ -1,0 +1,48 @@
+@charset "utf-8";
+html {
+    font-size: 625%;
+}
+body {
+    border: 0;
+    margin: 0;
+    font: normal 100% Arial, sans-serif;
+    font-family: "Microsoft Yahei", Arial;
+    font-size: 14px;
+    font-size: 0.14rem;
+    // background: #fff;
+    color: #333333;
+    box-sizing: border-box;
+    background: #f3f3f3;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+// a{
+//     color: inherit;
+// }
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+input{
+        box-sizing: border-box;
+}
+input:focus {
+    outline: 0;
+}
+// input框黄色背景问题，不使用box-shadow方法导致的背景不透明
+input:-webkit-autofill {
+    -webkit-animation: autofill-fix 1s infinite;
+}
+// @-webkit-keyframes autofill-fix {
+//     from { background-color: transparent }
+//     to { background-color: transparent }
+// }
+@-webkit-keyframes autofill-fix {
+    from { background-color: #fff }
+    to { background-color: #fff }
+}
