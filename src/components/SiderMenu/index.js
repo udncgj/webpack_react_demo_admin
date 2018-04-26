@@ -16,14 +16,17 @@ const { Header, Content, Footer, Sider } = Layout;
 class SiderMenu extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props.states);
     this.rootSubmenuKeys = formatter(menuData).map((item)=>item.path);//['sub1', 'sub2', 'sub4'];
     this.state = {
-      openKeys: ['/dashboard'],
-      keys: ['/dashboard'],
+      openKeys: ['/'+props.pageHeader[0].path],
+      keys: ['/'+props.pageHeader[0].path],
+      selectKeys: ['/'+props.pageHeader[0].path+'/'+props.pageHeader[1].path],
       collapsed: false,
+      pageHeader: props.pageHeader,
     };
     this.onOpenChange = (openKeys) => {
+      // console.log(data);
+      // let openKeys = data.keyPath;
       console.log(openKeys);
       const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
       if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -47,12 +50,31 @@ class SiderMenu extends React.Component {
       });
     }
   }
+  // shouldComponentUpdate(nextProps, nextState){
+  //   console.log('componentWillUpdate',this.props != nextProps,nextProps, nextState);
+  //   console.log('componentWillUpdate',this.state != nextState,this.props, this.state);
+  //   return true;//(this.state != nextState || this.props != nextProps);
+  // }
+  // componentDidUpdate(nextProps, nextState){
+  //   console.log('componentWillUpdate',nextProps, nextState);
+  //   console.log('componentWillUpdate',this.props, this.state);
+  //   if(nextProps.props.location.pathname != this.props.props.location.pathname){
+  //     // console.log(nextProps.location.pathname,this.props.location.pathname);
+  //     this.setState({pageHeader:nextProps.pageHeader});
+  //   }
+  // }
+  
+  // shouldComponentUpdate(nextProps, nextState){
+  //   // console.log('should:pre',this.props, this.state);
+  //   return true;
+  // }
   render() {
     // const { dispatch, visibleTodos } = this.props;//, visibilityFilter
     const SubMenu = Menu.SubMenu;
     const Item = Menu.Item;
     // console.log('menu',this.props);
     const { history, location, match } = this.props.props;
+    // console.log('sidermenu',this.props.pageHeader);
     return (
       <div>
         <Layout>
@@ -73,7 +95,7 @@ class SiderMenu extends React.Component {
               />
             </Header>
             <Content>
-              <PageHeader />
+              <PageHeader pageHeader={this.props.pageHeader} match={match} history={history} location={location} />
               <div className="content-body">{this.props.children}</div>
             </Content>
             <Footer>

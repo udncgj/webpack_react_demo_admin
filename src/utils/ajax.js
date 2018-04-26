@@ -6,6 +6,7 @@ const ajaxData = {
         method: 'POST',
         url: 'login'
     },
+
     menuAdd: {
         type: 'async',
         method: 'POST',
@@ -30,6 +31,17 @@ const ajaxData = {
         type: 'async',
         method: 'POST',
         url: 'u/menu/edit'
-    }
+    },
+
+    roleGet: {
+        type: 'async',
+        method: 'POST',
+        url: 'u/role/get'
+    },
+    roleEdit: {
+        type: 'async',
+        method: 'POST',
+        url: 'u/role/edit'
+    },
 }
 export default ajaxData;

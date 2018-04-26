@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addTodo, changeTodo, completeTodo, delTodo,setAppState } from '../../actions';
 
 import { local } from '../../utils/service';
-import './App.less';
+import './index.less';
 
 import { Layout, Menu, Icon, Button } from 'antd';
 

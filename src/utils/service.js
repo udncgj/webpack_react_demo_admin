@@ -1,3 +1,4 @@
+import request from './request';
 //本地缓存保存、获取
 function localStorageSave(name, json) {
   localStorage.setItem(name, JSON.stringify(json));
@@ -116,6 +117,26 @@ function ymdhms(obj) {
     + seperator2 + date.getSeconds();
   return currentdate;
 }
+//react-router相关
+function publicRequest(url,data,fn){
+  // console.log('this',this,url,data,fn);
+  // this.setState({loading: true});
+  (async()=>{
+    try {
+      let resultData = await request(url,form.jsonUrl({...this.state.pageData, ...data}));
+      this.dataReload(resultData);
+      if(fn && fn.success){
+        fn.success();
+      }
+    } catch(e) {
+      console.log("Oops, error", e);
+      if(fn && fn.fail){
+        fn.fail();
+      }
+    }
+    // this.setState({loading: false});
+  })()
+}
 //
 const local = {
   set: localStorageSave,
@@ -149,4 +170,5 @@ export {
   urlSearch,
   agreed,
   date,
+  publicRequest,
 }

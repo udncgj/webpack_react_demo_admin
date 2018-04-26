@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Personal.less'
+import './index.less'
 import cookie from '../../utils/cookie'
 
 import { connect } from 'react-redux';

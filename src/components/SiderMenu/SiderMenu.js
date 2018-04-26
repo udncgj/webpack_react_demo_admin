@@ -10,7 +10,8 @@ export const menuData = [
     name: '测试页', icon: 'test', path: 'test', children: [
       { name: 'App', path: 'app', }, 
       { name: '个人', path: 'personal', }, 
-      { name: '菜单', path: 'menu', }
+      { name: '菜单管理', path: 'menu', }, 
+      { name: '角色管理', path: 'role', }
     ],// hideInMenu: true, 
   }, 
   { 
@@ -63,8 +64,8 @@ export const menuData = [
   },
   {
     name: '权限管理', icon: 'power', path: 'power', children: [
-      { name: '菜单管理', path: 'resource', }, 
-      { name: '角色管理', path: 'role', }, 
+      // { name: '菜单管理', path: 'resource', }, 
+      // { name: '角色管理', path: 'role', }, 
     ],
   },
 ];
@@ -151,8 +152,9 @@ export function MenuList(props){
       mode="inline"
       openKeys={props.state.keys}
       onOpenChange={props.onOpenChange}
+      defaultOpenKeys={props.state.keys}
+      defaultSelectedKeys={props.state.selectKeys}
       theme="dark"
-      defaultSelectedKeys={['1']}
       inlineCollapsed="false"
     >
       {listData.map((item)=>list(item))}
